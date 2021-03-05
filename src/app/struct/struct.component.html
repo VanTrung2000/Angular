@@ -1,0 +1,25 @@
+<h3 *ngIf="isshow">Hello Struct</h3>
+<button (click)="isshow=!isshow">Toggle</button>
+<hr>
+<div *ngIf="anform" >
+<input placeholder="nhap ho" [(ngModel)]="newho" />
+<br><br>
+<input  placeholder="nhap ten" [(ngModel)]="newten" />
+<br><br>
+<input  type="radio"  />Nam
+<input type="radio" />Nữ<hr>
+<button (click)="adds();">Thêm</button>
+</div>
+<button (click)="anform=true" *ngIf="!anform">Thêm</button><hr>
+<select [(ngModel)]="fillter">
+    <option value="hienthi">Xem tất cả</option>
+    <option value="nam">Giới tính Nam</option>
+    <option value="nu">Giới tính Nữ</option>
+</select>
+<div *ngFor="let list of List">
+<div class="fo1" *ngIf=getshow(list.gioitinh)>
+    <h3 [ngStyle]="{ color: list.gioitinh ? 'black' : 'red' }">{{ list.ho }} {{ list.ten }}</h3>
+    <button (click)="dele(list.id);">Xóa</button>
+</div>
+</div>
+<hr>

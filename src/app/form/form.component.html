@@ -1,0 +1,7 @@
+<input placeholder="nhập vào" [(ngModel)]="name">
+<h3>Đã nhập: {{name}}</h3>
+<hr>
+<div [class.cricle]="ishighlt"></div><br>
+<button class="btn btn-info" (click)="showhide()">Hình tròn</button>
+<div [class.squre]="ishighlt"></div><br>
+<button class="btn btn-info" (click)="showhide()">Hình vuông</button>
